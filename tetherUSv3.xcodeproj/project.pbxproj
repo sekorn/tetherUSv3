@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18EAF62D7114D067CB900BE0 /* Pods_tetherUSv3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDA61850C025AF68B8AF124 /* Pods_tetherUSv3.framework */; };
+		D28FD7E91C7FA94D009213EA /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28FD7E81C7FA94D009213EA /* AddFriendViewController.swift */; };
 		D2BD51321C7669090041A5CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51311C7669090041A5CD /* AppDelegate.swift */; };
-		D2BD51341C7669090041A5CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51331C7669090041A5CD /* ViewController.swift */; };
+		D2BD51341C7669090041A5CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51331C7669090041A5CD /* LoginViewController.swift */; };
 		D2BD51371C7669090041A5CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2BD51351C7669090041A5CD /* Main.storyboard */; };
 		D2BD51391C7669090041A5CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2BD51381C7669090041A5CD /* Assets.xcassets */; };
 		D2BD513C1C7669090041A5CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2BD513A1C7669090041A5CD /* LaunchScreen.storyboard */; };
 		D2BD51471C7669090041A5CD /* tetherUSv3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51461C7669090041A5CD /* tetherUSv3UITests.swift */; };
+		D2FA8DF41C766EC60014CEB0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA8DF31C766EC60014CEB0 /* HomeViewController.swift */; };
+		D2FA8DF71C766F4E0014CEB0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA8DF61C766F4E0014CEB0 /* User.swift */; };
+		D2FA8DF91C766F780014CEB0 /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA8DF81C766F780014CEB0 /* FirebaseConstants.swift */; };
+		D2FA8DFC1C766F9F0014CEB0 /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA8DFB1C766F9F0014CEB0 /* FirebaseUtils.swift */; };
+		D2FA8DFE1C7672C80014CEB0 /* plugin button.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FA8DFD1C7672C80014CEB0 /* plugin button.png */; };
+		D2FA8E041C7675900014CEB0 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA8E031C7675900014CEB0 /* FriendsTableViewCell.swift */; };
+		D2FA8E091C76773F0014CEB0 /* FriendListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA8E081C76773F0014CEB0 /* FriendListTableViewController.swift */; };
+		D2FA8E0D1C7808B80014CEB0 /* AddFriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA8E0C1C7808B80014CEB0 /* AddFriendTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,9 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15AB8411605752CDD2402A0C /* Pods-tetherUSv3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tetherUSv3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tetherUSv3/Pods-tetherUSv3.debug.xcconfig"; sourceTree = "<group>"; };
+		2A6F753F3FCF1FFFEA8D471A /* Pods-tetherUSv3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tetherUSv3.release.xcconfig"; path = "Pods/Target Support Files/Pods-tetherUSv3/Pods-tetherUSv3.release.xcconfig"; sourceTree = "<group>"; };
+		CEDA61850C025AF68B8AF124 /* Pods_tetherUSv3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tetherUSv3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D28FD7E81C7FA94D009213EA /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		D2BD512E1C7669090041A5CD /* tetherUSv3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tetherUSv3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BD51311C7669090041A5CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D2BD51331C7669090041A5CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D2BD51331C7669090041A5CD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D2BD51361C7669090041A5CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2BD51381C7669090041A5CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2BD513B1C7669090041A5CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +50,14 @@
 		D2BD51421C7669090041A5CD /* tetherUSv3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tetherUSv3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BD51461C7669090041A5CD /* tetherUSv3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tetherUSv3UITests.swift; sourceTree = "<group>"; };
 		D2BD51481C7669090041A5CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2FA8DF31C766EC60014CEB0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D2FA8DF61C766F4E0014CEB0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D2FA8DF81C766F780014CEB0 /* FirebaseConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
+		D2FA8DFB1C766F9F0014CEB0 /* FirebaseUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUtils.swift; sourceTree = "<group>"; };
+		D2FA8DFD1C7672C80014CEB0 /* plugin button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plugin button.png"; sourceTree = "<group>"; };
+		D2FA8E031C7675900014CEB0 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		D2FA8E081C76773F0014CEB0 /* FriendListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListTableViewController.swift; sourceTree = "<group>"; };
+		D2FA8E0C1C7808B80014CEB0 /* AddFriendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EAF62D7114D067CB900BE0 /* Pods_tetherUSv3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +79,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16620582EF8EF38524B266BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEDA61850C025AF68B8AF124 /* Pods_tetherUSv3.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6FAD4D70F197535960D0ACF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15AB8411605752CDD2402A0C /* Pods-tetherUSv3.debug.xcconfig */,
+				2A6F753F3FCF1FFFEA8D471A /* Pods-tetherUSv3.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D2BD51251C7669080041A5CD = {
 			isa = PBXGroup;
 			children = (
 				D2BD51301C7669090041A5CD /* tetherUSv3 */,
 				D2BD51451C7669090041A5CD /* tetherUSv3UITests */,
 				D2BD512F1C7669090041A5CD /* Products */,
+				C6FAD4D70F197535960D0ACF /* Pods */,
+				16620582EF8EF38524B266BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +119,13 @@
 		D2BD51301C7669090041A5CD /* tetherUSv3 */ = {
 			isa = PBXGroup;
 			children = (
+				D2FA8E051C7675A70014CEB0 /* images */,
+				D2FA8DFF1C7675000014CEB0 /* Layout */,
+				D2FA8DFA1C766F930014CEB0 /* Utilities */,
+				D2FA8DF51C766F3E0014CEB0 /* Models */,
+				D2FA8E021C76757E0014CEB0 /* Views */,
+				D2FA8DF21C766EAD0014CEB0 /* Controllers */,
 				D2BD51311C7669090041A5CD /* AppDelegate.swift */,
-				D2BD51331C7669090041A5CD /* ViewController.swift */,
-				D2BD51351C7669090041A5CD /* Main.storyboard */,
 				D2BD51381C7669090041A5CD /* Assets.xcassets */,
 				D2BD513A1C7669090041A5CD /* LaunchScreen.storyboard */,
 				D2BD513D1C7669090041A5CD /* Info.plist */,
@@ -96,6 +142,59 @@
 			path = tetherUSv3UITests;
 			sourceTree = "<group>";
 		};
+		D2FA8DF21C766EAD0014CEB0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2BD51331C7669090041A5CD /* LoginViewController.swift */,
+				D2FA8DF31C766EC60014CEB0 /* HomeViewController.swift */,
+				D2FA8E081C76773F0014CEB0 /* FriendListTableViewController.swift */,
+				D2FA8E0C1C7808B80014CEB0 /* AddFriendTableViewController.swift */,
+				D28FD7E81C7FA94D009213EA /* AddFriendViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D2FA8DF51C766F3E0014CEB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D2FA8DF61C766F4E0014CEB0 /* User.swift */,
+				D2FA8DF81C766F780014CEB0 /* FirebaseConstants.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D2FA8DFA1C766F930014CEB0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D2FA8DFB1C766F9F0014CEB0 /* FirebaseUtils.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		D2FA8DFF1C7675000014CEB0 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				D2BD51351C7669090041A5CD /* Main.storyboard */,
+			);
+			name = Layout;
+			sourceTree = "<group>";
+		};
+		D2FA8E021C76757E0014CEB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D2FA8E031C7675900014CEB0 /* FriendsTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D2FA8E051C7675A70014CEB0 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D2FA8DFD1C7672C80014CEB0 /* plugin button.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +202,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2BD514B1C7669090041A5CD /* Build configuration list for PBXNativeTarget "tetherUSv3" */;
 			buildPhases = (
+				E0D3F345B87B7BD004C5B343 /* Check Pods Manifest.lock */,
 				D2BD512A1C7669080041A5CD /* Sources */,
 				D2BD512B1C7669080041A5CD /* Frameworks */,
 				D2BD512C1C7669080041A5CD /* Resources */,
+				6EEA2E2246AA67C3D6BA703D /* Embed Pods Frameworks */,
+				4017FFCA9ECD30980FDF5377 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -180,6 +282,7 @@
 				D2BD513C1C7669090041A5CD /* LaunchScreen.storyboard in Resources */,
 				D2BD51391C7669090041A5CD /* Assets.xcassets in Resources */,
 				D2BD51371C7669090041A5CD /* Main.storyboard in Resources */,
+				D2FA8DFE1C7672C80014CEB0 /* plugin button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,13 +295,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4017FFCA9ECD30980FDF5377 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tetherUSv3/Pods-tetherUSv3-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6EEA2E2246AA67C3D6BA703D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tetherUSv3/Pods-tetherUSv3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0D3F345B87B7BD004C5B343 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D2BD512A1C7669080041A5CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2BD51341C7669090041A5CD /* ViewController.swift in Sources */,
+				D2FA8E0D1C7808B80014CEB0 /* AddFriendTableViewController.swift in Sources */,
+				D2FA8DFC1C766F9F0014CEB0 /* FirebaseUtils.swift in Sources */,
+				D28FD7E91C7FA94D009213EA /* AddFriendViewController.swift in Sources */,
+				D2FA8E091C76773F0014CEB0 /* FriendListTableViewController.swift in Sources */,
+				D2FA8DF71C766F4E0014CEB0 /* User.swift in Sources */,
+				D2BD51341C7669090041A5CD /* LoginViewController.swift in Sources */,
+				D2FA8E041C7675900014CEB0 /* FriendsTableViewCell.swift in Sources */,
 				D2BD51321C7669090041A5CD /* AppDelegate.swift in Sources */,
+				D2FA8DF91C766F780014CEB0 /* FirebaseConstants.swift in Sources */,
+				D2FA8DF41C766EC60014CEB0 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +482,7 @@
 		};
 		D2BD514C1C7669090041A5CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15AB8411605752CDD2402A0C /* Pods-tetherUSv3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tetherUSv3/Info.plist;
@@ -334,6 +494,7 @@
 		};
 		D2BD514D1C7669090041A5CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A6F753F3FCF1FFFEA8D471A /* Pods-tetherUSv3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tetherUSv3/Info.plist;
@@ -386,6 +547,7 @@
 				D2BD514D1C7669090041A5CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2BD514E1C7669090041A5CD /* Build configuration list for PBXNativeTarget "tetherUSv3UITests" */ = {
 			isa = XCConfigurationList;
@@ -394,6 +556,7 @@
 				D2BD51501C7669090041A5CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

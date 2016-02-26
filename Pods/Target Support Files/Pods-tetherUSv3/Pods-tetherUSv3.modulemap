@@ -1,0 +1,6 @@
+framework module Pods_tetherUSv3 {
+  umbrella header "Pods-tetherUSv3-umbrella.h"
+
+  export *
+  module * { export * }
+}
