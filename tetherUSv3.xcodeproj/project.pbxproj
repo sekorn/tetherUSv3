@@ -10,6 +10,8 @@
 		18EAF62D7114D067CB900BE0 /* Pods_tetherUSv3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDA61850C025AF68B8AF124 /* Pods_tetherUSv3.framework */; };
 		B69F74E81C80CAD600272CAA /* you have friend icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B69F74E61C80CAD600272CAA /* you have friend icon.png */; };
 		B69F74E91C80CAD600272CAA /* add friend icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B69F74E71C80CAD600272CAA /* add friend icon.png */; };
+		B69F74EB1C81056500272CAA /* FriendRequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F74EA1C81056500272CAA /* FriendRequestsTableViewController.swift */; };
+		B69F74ED1C8105C800272CAA /* FriendRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F74EC1C8105C800272CAA /* FriendRequestTableViewCell.swift */; };
 		D28FD7E91C7FA94D009213EA /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28FD7E81C7FA94D009213EA /* AddFriendViewController.swift */; };
 		D2BD51321C7669090041A5CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51311C7669090041A5CD /* AppDelegate.swift */; };
 		D2BD51341C7669090041A5CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51331C7669090041A5CD /* LoginViewController.swift */; };
@@ -42,6 +44,8 @@
 		2A6F753F3FCF1FFFEA8D471A /* Pods-tetherUSv3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tetherUSv3.release.xcconfig"; path = "Pods/Target Support Files/Pods-tetherUSv3/Pods-tetherUSv3.release.xcconfig"; sourceTree = "<group>"; };
 		B69F74E61C80CAD600272CAA /* you have friend icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "you have friend icon.png"; sourceTree = "<group>"; };
 		B69F74E71C80CAD600272CAA /* add friend icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add friend icon.png"; sourceTree = "<group>"; };
+		B69F74EA1C81056500272CAA /* FriendRequestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestsTableViewController.swift; sourceTree = "<group>"; };
+		B69F74EC1C8105C800272CAA /* FriendRequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestTableViewCell.swift; sourceTree = "<group>"; };
 		CEDA61850C025AF68B8AF124 /* Pods_tetherUSv3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tetherUSv3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28FD7E81C7FA94D009213EA /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		D2BD512E1C7669090041A5CD /* tetherUSv3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tetherUSv3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +158,7 @@
 				D2FA8E081C76773F0014CEB0 /* FriendListTableViewController.swift */,
 				D2FA8E0C1C7808B80014CEB0 /* AddFriendTableViewController.swift */,
 				D28FD7E81C7FA94D009213EA /* AddFriendViewController.swift */,
+				B69F74EA1C81056500272CAA /* FriendRequestsTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				D2FA8E031C7675900014CEB0 /* FriendsTableViewCell.swift */,
+				B69F74EC1C8105C800272CAA /* FriendRequestTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -362,9 +368,11 @@
 				D2FA8E091C76773F0014CEB0 /* FriendListTableViewController.swift in Sources */,
 				D2FA8DF71C766F4E0014CEB0 /* User.swift in Sources */,
 				D2BD51341C7669090041A5CD /* LoginViewController.swift in Sources */,
+				B69F74ED1C8105C800272CAA /* FriendRequestTableViewCell.swift in Sources */,
 				D2FA8E041C7675900014CEB0 /* FriendsTableViewCell.swift in Sources */,
 				D2BD51321C7669090041A5CD /* AppDelegate.swift in Sources */,
 				D2FA8DF91C766F780014CEB0 /* FirebaseConstants.swift in Sources */,
+				B69F74EB1C81056500272CAA /* FriendRequestsTableViewController.swift in Sources */,
 				D2FA8DF41C766EC60014CEB0 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

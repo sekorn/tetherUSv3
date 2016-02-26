@@ -9,6 +9,10 @@
 import Foundation
 import Firebase
 
+protocol UserDelegate {
+    func endUserInfoUpdate()
+}
+
 class User {
     
     let usersRef = Firebase(url: FirebaseConstants.USERLIST)
@@ -25,6 +29,7 @@ class User {
     var friendRequests: [String]?
     var tetherRequests: [String]?
     var userSyncd: Bool = false
+    var delegate: UserDelegate?
     
     init(authData: FAuthData) {
         self.uid = authData.uid
@@ -77,9 +82,9 @@ class User {
                     if let messages = snapshot.value.objectForKey("messages") {
                         self.messages = messages as? [String]
                     }
-                    
-                    self.userSyncd = true
                 }
+                
+                self.delegate?.endUserInfoUpdate()
             })
         }
     }
@@ -140,9 +145,5 @@ class User {
         if let userRef = self.usersRef.childByAppendingPath(self.uid) {
             userRef.updateChildValues(self.ToDictionary())
         }
-    }
-    
-    func updateFriendAlert() {
-        
     }
 }

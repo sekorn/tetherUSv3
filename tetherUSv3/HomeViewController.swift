@@ -10,20 +10,17 @@ import UIKit
 import Firebase
 import CoreLocation
 
-protocol HomeViewControllerDelegate {
-    func updateFriendAlert()
-}
-
-class HomeViewController: UIViewController, CLLocationManagerDelegate {
+class HomeViewController: UIViewController, CLLocationManagerDelegate, UserDelegate {
     
     let seconds: Double = 5.0
     let locationManager = CLLocationManager()
     let HomeToFriends = "HomeToFriendListSegue"
+    let HomeToFriendRequests = "HomeToFriendRequestSegue"
     let untetheredRef = Firebase(url: FirebaseConstants.UNTETHERED)
     let usersRef = Firebase(url: FirebaseConstants.USERLIST)
     
     var canPing: Bool = false
-    var user: User!
+    var user: User?
     var timer: NSTimer!
     
     var aiView: UIActivityIndicatorView?
@@ -38,6 +35,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         
         timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("SetTimerFlag:"), userInfo: nil, repeats: true)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,10 +64,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         usersRef.observeAuthEventWithBlock { (authData) -> Void in
             if authData != nil {
                 self.user = User(authData: authData)
-                self.user.isTethered = false
-                self.user.isOnline = true
+                self.user!.isTethered = false
+                self.user!.delegate = self
+                self.user!.isOnline = true
                 
-                self.user.Save()
+                self.user!.Save()
             }
         }
     }
@@ -79,7 +78,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func FriendAlertButtonPressed(sender: AnyObject) {
-        
+        self.performSegueWithIdentifier(HomeToFriendRequests, sender: sender)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -90,8 +89,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if self.user != nil && canPing == true {
-            let currentUserRef = self.usersRef.childByAppendingPath(self.user.uid)
+        if canPing == true {
+            let currentUserRef = self.usersRef.childByAppendingPath(self.user!.uid)
             let coords = ["latitude": self.locationManager.location!.coordinate.latitude, "longitude" : self.locationManager.location!.coordinate.longitude]
             currentUserRef.updateChildValues(coords)
             canPing = false
@@ -100,5 +99,29 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     func SetTimerFlag(timer : NSTimer) {
         canPing = true
+    }
+    
+    func endUserInfoUpdate() {
+        self.overlayView?.removeFromSuperview()
+        
+        toggleFriendAlertButton()
+    }
+    
+    func toggleFriendAlertButton() {
+        if let friendRequests = user?.friendRequests {
+            if friendRequests.count > 0 {
+                FriendAlert.enabled = true
+            } else {
+                UIView.animateWithDuration(1.0, animations: {
+                    self.FriendAlert.image = nil
+                    self.FriendAlert.enabled = false
+                })
+            }
+        } else {
+            UIView.animateWithDuration(1.0, animations: {
+                self.FriendAlert.image = nil
+                self.FriendAlert.enabled = false
+            })
+        }
     }
 }

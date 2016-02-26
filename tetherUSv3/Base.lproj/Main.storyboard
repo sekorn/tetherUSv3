@@ -104,6 +104,37 @@
             </objects>
             <point key="canvasLocation" x="283" y="400"/>
         </scene>
+        <!--Friend Requests Table View Controller-->
+        <scene sceneID="Tks-XQ-bjU">
+            <objects>
+                <tableViewController id="SvM-lF-kZO" customClass="FriendRequestsTableViewController" customModule="tetherUSv3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZJj-OU-o7R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.066666666666666666" green="0.12156862745098039" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="106" id="iVk-hL-aAU" customClass="FriendRequestTableViewCell" customModule="tetherUSv3" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="414" height="106"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iVk-hL-aAU" id="hyW-Ng-HK3">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.066666666666666666" green="0.12156862745098039" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SvM-lF-kZO" id="r3n-FT-jiN"/>
+                            <outlet property="delegate" destination="SvM-lF-kZO" id="3tb-yd-KFc"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ygo-kL-aJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1298" y="-410"/>
+        </scene>
         <!--TetherUs-->
         <scene sceneID="wlF-Uj-qzR">
             <objects>
@@ -140,6 +171,7 @@
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="FriendAlertButtonPressed:" destination="FCE-BL-XVv" id="bui-wu-gvP"/>
+                                <segue destination="SvM-lF-kZO" kind="show" identifier="HomeToFriendRequestSegue" id="fqh-V6-EjC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -161,7 +193,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexBackgroundColor" red="0.88114051920000003" green="0.92116405580000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.066666666666666666" green="0.12156862745098039" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="109" id="Z6h-0T-Mzj" customClass="FriendTableViewCell" customModule="tetherUSv3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="414" height="109"/>
