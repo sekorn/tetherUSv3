@@ -24,6 +24,7 @@ class User {
     var friends: [String]?
     var friendRequests: [String]?
     var tetherRequests: [String]?
+    var userSyncd: Bool = false
     
     init(authData: FAuthData) {
         self.uid = authData.uid
@@ -50,29 +51,34 @@ class User {
         if let userRef = usersRef.childByAppendingPath(self.uid) {
             userRef.onDisconnectUpdateChildValues(["isOnline" : false])
             
-            userRef.childByAppendingPath("friends").observeSingleEventOfType(.Value, withBlock: { (snapshot) -> Void in
+            userRef.observeSingleEventOfType(.Value, withBlock: {(snapshot) in
                 if snapshot.exists() {
-                    self.friends = userRef.valueForKey("friends") as? [String]
-                }
-            })
-            
-            userRef.childByAppendingPath("friendRequests").observeSingleEventOfType(.Value, withBlock: { (snapshot) -> Void in
-                if snapshot.exists() {
-                    self.friendRequests = userRef.valueForKey("friendRequests") as? [String]
-                }
-            })
-            
-            userRef.childByAppendingPath("tetherRequests").observeSingleEventOfType(.Value, withBlock: {(snapshot)
-                in
-                if snapshot.exists() {
-                    self.tetherRequests = userRef.valueForKey("tetherRequets") as? [String]
-                }
-            })
-            
-            userRef.childByAppendingPath("messages").observeSingleEventOfType(.Value, withBlock: {(snapshot)
-                in
-                if snapshot.exists() {
-                    self.tetherRequests = userRef.valueForKey("messages") as? [String]
+                    
+                    if let latitude = snapshot.value.objectForKey("latitude") {
+                        self.latitude = latitude as? Double
+                    }
+                    
+                    if let longitude = snapshot.value.objectForKey("longitude") {
+                        self.longitude = longitude as? Double
+                    }
+                    
+                    if let friendRequests = snapshot.value.objectForKey("friendRequests") {
+                        self.friendRequests = friendRequests as? [String]
+                    }
+                    
+                    if let friends = snapshot.value.objectForKey("friends") {
+                        self.friends = friends as? [String]
+                    }
+                    
+                    if let tetherRequests = snapshot.value.objectForKey("tetherRequests") {
+                        self.tetherRequests = tetherRequests as? [String]
+                    }
+                    
+                    if let messages = snapshot.value.objectForKey("messages") {
+                        self.messages = messages as? [String]
+                    }
+                    
+                    self.userSyncd = true
                 }
             })
         }
@@ -116,12 +122,17 @@ class User {
     
     func RequestFriend(friendId: String) {
         if let userRef = self.usersRef.childByAppendingPath(friendId) {
-            if let friendReqs = userRef.valueForKey("friendRequests") {
-                friendReqs.appendString(self.uid)
-                userRef.updateChildValues(["friendRequests": friendReqs])
-            } else {
-                userRef.updateChildValues(["friendRequets" : ["\(self.uid)"]])
-            }
+            userRef.childByAppendingPath("friendRequests").observeSingleEventOfType(.Value, withBlock: {(snapshot) in
+                if snapshot.exists() {
+                    var friendReqs = snapshot.value as! [String]
+                    if !friendReqs.contains(self.uid) {
+                        friendReqs.append(self.uid)
+                        userRef.updateChildValues(["friendRequests": friendReqs])
+                    }
+                } else {
+                    userRef.updateChildValues(["friendRequests": [self.uid]])
+                }
+            })
         }
     }
     
@@ -129,5 +140,9 @@ class User {
         if let userRef = self.usersRef.childByAppendingPath(self.uid) {
             userRef.updateChildValues(self.ToDictionary())
         }
+    }
+    
+    func updateFriendAlert() {
+        
     }
 }

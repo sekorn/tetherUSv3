@@ -21,14 +21,6 @@ class FirebaseUtils {
         })
     }
     
-    static func GetIDByEmail(email: String) -> String{
-        var ID = ""
-        
-        let usersRef = Firebase(url: FirebaseConstants.USERLIST)
-        
-        return ID
-    }
-    
     static func UpdateFriendMessages(message: String, friendId: String) {
         
         let usersRef = Firebase(url: FirebaseConstants.USERLIST)

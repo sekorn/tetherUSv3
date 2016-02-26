@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -135,9 +135,17 @@
                             <constraint firstItem="SlH-Ti-90a" firstAttribute="centerY" secondItem="rZD-8n-g0m" secondAttribute="centerY" id="f4z-Zd-jqg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TetherUs" id="6GI-Fu-tDC"/>
+                    <navigationItem key="navigationItem" title="TetherUs" id="6GI-Fu-tDC">
+                        <barButtonItem key="rightBarButtonItem" image="you have friend icon.png" id="sZf-la-rfz">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="FriendAlertButtonPressed:" destination="FCE-BL-XVv" id="bui-wu-gvP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="FriendAlert" destination="sZf-la-rfz" id="c8Y-Cc-YJw"/>
                         <segue destination="JUM-Qa-8q1" kind="show" identifier="HomeToFriendListSegue" id="62F-8q-eBZ"/>
                     </connections>
                 </viewController>
@@ -171,7 +179,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Friends" id="hzT-5L-sY6">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="83a-vG-g9v">
+                        <barButtonItem key="rightBarButtonItem" image="add friend icon.png" id="83a-vG-g9v">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="USk-Ra-eOz" kind="show" identifier="FriendListToAddFriendSegue" id="hQR-8a-hYD"/>
                             </connections>
@@ -287,7 +296,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="KwV-rD-Fai">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="KwV-rD-Fai">
                                         <rect key="frame" x="51" y="72" width="233" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpA-Ep-lWB">
@@ -351,6 +360,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add friend icon.png" width="23" height="27"/>
         <image name="plugin button.png" width="123" height="123"/>
+        <image name="you have friend icon.png" width="23" height="30"/>
     </resources>
 </document>

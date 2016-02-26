@@ -10,6 +10,10 @@ import UIKit
 import Firebase
 import CoreLocation
 
+protocol HomeViewControllerDelegate {
+    func updateFriendAlert()
+}
+
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     let seconds: Double = 5.0
@@ -22,6 +26,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     var user: User!
     var timer: NSTimer!
     
+    var aiView: UIActivityIndicatorView?
+    var overlayView: UIView?
+    
+    @IBOutlet weak var FriendAlert: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,8 +38,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         
         timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("SetTimerFlag:"), userInfo: nil, repeats: true)
-        
-        //FirebaseUtils.EmailSearch("sekornblatt@gmail.com")
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,24 +50,24 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
+        overlayView = UIView(frame: view.frame)
+        overlayView!.center = view.center
+        overlayView?.backgroundColor = UIColor.grayColor()
+        overlayView?.alpha = 0.5
+        
+        aiView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        aiView!.center = (overlayView?.center)!
+        aiView?.hidesWhenStopped = true
+        overlayView?.addSubview(aiView!)
+        
+        view.addSubview(overlayView!)
+        aiView?.startAnimating()
+        
         usersRef.observeAuthEventWithBlock { (authData) -> Void in
             if authData != nil {
                 self.user = User(authData: authData)
                 self.user.isTethered = false
                 self.user.isOnline = true
-                
-                let userRef = self.usersRef.childByAppendingPath(authData.uid)
-                userRef.childByAppendingPath("latitude").observeSingleEventOfType(.Value, withBlock: {(snapshot) -> Void in
-                    if snapshot.exists() {
-                        self.user.latitude = (snapshot.value as? Double)!
-                    }
-                })
-                
-                userRef.childByAppendingPath("longitude").observeSingleEventOfType(.Value, withBlock: {(snapshot) -> Void in
-                    if snapshot.exists() {
-                        self.user.longitude = (snapshot.value as? Double)!
-                    }
-                })
                 
                 self.user.Save()
             }
@@ -69,6 +76,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func TetherButtonPressed(sender: AnyObject) {
         self.performSegueWithIdentifier(HomeToFriends, sender: sender)
+    }
+    
+    @IBAction func FriendAlertButtonPressed(sender: AnyObject) {
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

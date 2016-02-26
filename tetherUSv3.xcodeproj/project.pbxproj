@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		18EAF62D7114D067CB900BE0 /* Pods_tetherUSv3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDA61850C025AF68B8AF124 /* Pods_tetherUSv3.framework */; };
+		B69F74E81C80CAD600272CAA /* you have friend icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B69F74E61C80CAD600272CAA /* you have friend icon.png */; };
+		B69F74E91C80CAD600272CAA /* add friend icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B69F74E71C80CAD600272CAA /* add friend icon.png */; };
 		D28FD7E91C7FA94D009213EA /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28FD7E81C7FA94D009213EA /* AddFriendViewController.swift */; };
 		D2BD51321C7669090041A5CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51311C7669090041A5CD /* AppDelegate.swift */; };
 		D2BD51341C7669090041A5CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51331C7669090041A5CD /* LoginViewController.swift */; };
@@ -38,6 +40,8 @@
 /* Begin PBXFileReference section */
 		15AB8411605752CDD2402A0C /* Pods-tetherUSv3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tetherUSv3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tetherUSv3/Pods-tetherUSv3.debug.xcconfig"; sourceTree = "<group>"; };
 		2A6F753F3FCF1FFFEA8D471A /* Pods-tetherUSv3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tetherUSv3.release.xcconfig"; path = "Pods/Target Support Files/Pods-tetherUSv3/Pods-tetherUSv3.release.xcconfig"; sourceTree = "<group>"; };
+		B69F74E61C80CAD600272CAA /* you have friend icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "you have friend icon.png"; sourceTree = "<group>"; };
+		B69F74E71C80CAD600272CAA /* add friend icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add friend icon.png"; sourceTree = "<group>"; };
 		CEDA61850C025AF68B8AF124 /* Pods_tetherUSv3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tetherUSv3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28FD7E81C7FA94D009213EA /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		D2BD512E1C7669090041A5CD /* tetherUSv3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tetherUSv3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +194,8 @@
 		D2FA8E051C7675A70014CEB0 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B69F74E61C80CAD600272CAA /* you have friend icon.png */,
+				B69F74E71C80CAD600272CAA /* add friend icon.png */,
 				D2FA8DFD1C7672C80014CEB0 /* plugin button.png */,
 			);
 			name = images;
@@ -279,9 +285,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69F74E81C80CAD600272CAA /* you have friend icon.png in Resources */,
 				D2BD513C1C7669090041A5CD /* LaunchScreen.storyboard in Resources */,
 				D2BD51391C7669090041A5CD /* Assets.xcassets in Resources */,
 				D2BD51371C7669090041A5CD /* Main.storyboard in Resources */,
+				B69F74E91C80CAD600272CAA /* add friend icon.png in Resources */,
 				D2FA8DFE1C7672C80014CEB0 /* plugin button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
