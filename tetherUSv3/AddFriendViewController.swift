@@ -11,9 +11,9 @@ import Firebase
 
 class AddFriendViewController: UIViewController {
 
-    var friendEmail:String?
-    var friendId:String?
     var user: User?
+    var friendId: String?
+    var friend: User?
     
     @IBOutlet weak var email: UILabel!
     
@@ -21,7 +21,16 @@ class AddFriendViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.email.text = friendEmail
+        dispatch_async(Utils.GlobalBackgroundQueue){
+            User(uid: self.friendId!, callback: { (newUser) -> () in
+                
+                self.friend = newUser
+                
+                dispatch_async(Utils.GlobalMainQueue) {
+                    self.email.text = self.friend!.email
+                }
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,15 +39,12 @@ class AddFriendViewController: UIViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
-        let usersRef = Firebase(url: FirebaseConstants.USERLIST)
-        usersRef.observeAuthEventWithBlock { (authData) -> Void in
-            if authData != nil {
-                self.user = User(authData: authData)
-            }
-        }
+        
     }
     @IBAction func RequestFriendButtonTapped(sender: AnyObject) {
-        self.user!.RequestFriend(friendId!)
+        UserUtils.RequestFriend(self.user!, friend: self.friend!) {
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
     
     @IBAction func CancelButtonTapped(sender: AnyObject) {

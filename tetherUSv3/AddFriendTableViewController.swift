@@ -98,8 +98,8 @@ class AddFriendTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == AddFriendSegue {
             let vc = segue.destinationViewController as? AddFriendViewController
-            vc?.friendEmail = results[self.selectedIndex]
-            vc?.friendId = ids[self.selectedIndex]
+            vc!.user = self.user
+            vc!.friendId = ids[self.selectedIndex]
             print(results[self.selectedIndex])
         }
     }

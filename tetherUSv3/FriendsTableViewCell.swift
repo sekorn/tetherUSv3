@@ -10,6 +10,8 @@ import UIKit
 
 class FriendTableViewCell: UITableViewCell {
     
+    var user:User?
+    
     @IBOutlet weak var emailLabel: UILabel!
     
     override func awakeFromNib() {

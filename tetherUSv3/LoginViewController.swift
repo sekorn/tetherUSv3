@@ -12,13 +12,11 @@ import CoreLocation
 
 class LoginViewController: UIViewController {
     
-    let LoginToHome = "LoginToHomeSegue"
-    
-    let firebase = Firebase(url: FirebaseConstants.BASE)
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    let LoginToHome = "LoginToHomeSegue"
+    let firebase = Firebase(url: FirebaseConstants.BASE)
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -39,7 +37,7 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         
         firebase.observeAuthEventWithBlock { (authData) -> Void in
-            
+
             if authData != nil {
                 self.performSegueWithIdentifier(self.LoginToHome, sender: nil)
             }
@@ -91,7 +89,6 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginPressed(sender: AnyObject) {
-        
         firebase.authUser(emailTextField.text, password: passwordTextField.text) { (error, authData) -> Void in
             
         }

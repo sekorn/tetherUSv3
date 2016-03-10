@@ -9,6 +9,14 @@
 import Foundation
 import Firebase
 
+struct FirebaseConstants {
+    static let BASE: String = "https://tetherus.firebaseio.com/"
+    static let USERLIST: String  = "https://tetherus.firebaseio.com/userlist"
+    static let UNTETHERED: String = "https//tetherus.firebaseio.com/untetheredusers"
+    static let TETHERLIST: String = "https://tetherus.firebaseio.com/tetherlist"
+    static let TETHERCHAT: String = "https://tetherus.firebaseio.com/chat"
+}
+
 class FirebaseUtils {
     
     static func EmailSearch(search: String) {

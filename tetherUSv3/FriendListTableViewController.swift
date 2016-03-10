@@ -13,6 +13,7 @@ class FriendListTableViewController: UITableViewController {
     var user: User?
     
     let FriendListToAddFriend = "FriendListToAddFriendSegue"
+    let FriendListToChat = "FriendsToChatSegue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,15 +49,34 @@ class FriendListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! FriendTableViewCell
 
-        // Configure the cell...
+        dispatch_async(Utils.GlobalBackgroundQueue){
+            
+            User(uid: self.user!.friends![indexPath.row], callback: { (newUser) -> () in
+                
+                cell.user = newUser
+                
+                dispatch_async(Utils.GlobalMainQueue) {
+                    cell.emailLabel.text = newUser.email
+                }
+            })
+        }
 
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        self.performSegueWithIdentifier(FriendListToChat, sender: nil)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == FriendListToAddFriend {
-            let vc = segue.destinationViewController as? AddFriendTableViewController
-            vc!.user = self.user
+            let vc = segue.destinationViewController as! AddFriendTableViewController
+            vc.user = self.user
+        } else if segue.identifier == FriendListToChat {
+            let vc = segue.destinationViewController as! ChatViewController
+            vc.senderId = self.user?.uid
+            vc.senderDisplayName = "me"
         }
     }
     

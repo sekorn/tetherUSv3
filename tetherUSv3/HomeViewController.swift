@@ -48,27 +48,32 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UserDeleg
     }
     
     override func viewDidAppear(animated: Bool) {
-        overlayView = UIView(frame: view.frame)
-        overlayView!.center = view.center
-        overlayView?.backgroundColor = UIColor.grayColor()
-        overlayView?.alpha = 0.5
         
-        aiView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        aiView!.center = (overlayView?.center)!
-        aiView?.hidesWhenStopped = true
-        overlayView?.addSubview(aiView!)
-        
-        view.addSubview(overlayView!)
-        aiView?.startAnimating()
-        
-        usersRef.observeAuthEventWithBlock { (authData) -> Void in
-            if authData != nil {
-                self.user = User(authData: authData)
-                self.user!.isTethered = false
-                self.user!.delegate = self
-                self.user!.isOnline = true
-                
-                self.user!.Save()
+        if user == nil {
+            
+            overlayView = UIView(frame: view.frame)
+            overlayView!.center = view.center
+            overlayView?.backgroundColor = UIColor.grayColor()
+            overlayView?.alpha = 0.5
+            
+            aiView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+            aiView!.center = (overlayView?.center)!
+            aiView?.hidesWhenStopped = true
+            overlayView?.addSubview(aiView!)
+            
+            view.addSubview(overlayView!)
+            aiView?.startAnimating()
+            
+            usersRef.observeAuthEventWithBlock { (authData) -> Void in
+                if authData != nil {
+                    
+                    self.user = User(authData: authData)
+                    self.user!.isTethered = false
+                    self.user!.delegate = self
+                    self.user!.isOnline = true
+                    
+                    self.user!.Save()
+                }
             }
         }
     }
@@ -84,6 +89,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UserDeleg
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == HomeToFriends {
             let vc = segue.destinationViewController as? FriendListTableViewController
+            vc!.user = self.user
+        } else if segue.identifier == HomeToFriendRequests {
+            let vc = segue.destinationViewController as? FriendRequestsTableViewController
             vc!.user = self.user
         }
     }
@@ -105,6 +113,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UserDeleg
         self.overlayView?.removeFromSuperview()
         
         toggleFriendAlertButton()
+    }
+    
+    func foundUser() {
+        
     }
     
     func toggleFriendAlertButton() {
